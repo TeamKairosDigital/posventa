@@ -28,7 +28,7 @@ export function AreaTecladoPos() {
   };
 
   return (
-    <Container stateMetodosPago={stateMetodosPago}>
+    <Container $stateMetodosPago={stateMetodosPago}>
       <section className="areatipopago">
         {datametodospago?.map((item, index) => {
           return (
@@ -75,7 +75,7 @@ const Container = styled.div`
     bottom: initial;
   }
   .areatipopago {
-    display: ${({ stateMetodosPago }) => (stateMetodosPago ? "flex" : "none")};
+    display: ${({ $stateMetodosPago }) => ($stateMetodosPago ? "flex" : "none")};
     flex-wrap: wrap;
     gap: 10px;
     padding: 10px;

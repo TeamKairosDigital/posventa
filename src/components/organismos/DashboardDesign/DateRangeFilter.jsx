@@ -68,39 +68,39 @@ export const DateRangeFilter = () => {
       <ButtonGroup>
         <TimeRangeButton
           onClick={setSiempreRange}
-          isActive={activeRange === "Todo"}
+          $isActive={activeRange === "Todo"}
         >
           Todo
         </TimeRangeButton>
         <TimeRangeButton
-          isActive={activeRange === "7 días"}
+          $isActive={activeRange === "7 días"}
           onClick={() => setPresetRange(7, "7 días")}
         >
           Últimos días 7 dias
         </TimeRangeButton>
         <TimeRangeButton
-          isActive={activeRange === "30 días"}
+          $isActive={activeRange === "30 días"}
           onClick={() => setPresetRange(30, "30 días")}
         >
           Últimos 30 días
         </TimeRangeButton>
         <TimeRangeButton
-          isActive={activeRange === "12 meses"}
+          $isActive={activeRange === "12 meses"}
           onClick={() => setPresetRange(365, "12 meses")}
         >
           Últimos 12 meses
         </TimeRangeButton>
-        <TimeRangeButton isActive={activeRange === "Hoy"} onClick={selectToday}>
+        <TimeRangeButton $isActive={activeRange === "Hoy"} onClick={selectToday}>
           Hoy
         </TimeRangeButton>
         <TimeRangeButton
-          isActive={activeRange === "Por Día"}
+          $isActive={activeRange === "Por Día"}
           onClick={() => setActiveRange("Por Día")}
         >
           Por Día
         </TimeRangeButton>
         <TimeRangeButton
-          isActive={activeRange === "Limpiar"}
+          $isActive={activeRange === "Limpiar"}
           onClick={()=>{
             setDates([])
             setSingleDate(null)
@@ -133,18 +133,30 @@ const Container = styled.div`
 
 const ButtonGroup = styled.div``;
 
+// const TimeRangeButton = styled.button`
+//   color: ${({ theme }) => theme.text};
+//   background-color: ${({ isActive, theme }) =>
+//     isActive ? theme.bg : "transparent"};
+//   border: none;
+//   border-radius: 8px;
+//   padding: 8px 16px;
+//   font-size: 14px;
+//   cursor: pointer;
+//   font-weight:${({ isActive, theme }) =>
+//     isActive ? "bold" : "none"};
+// `;
 const TimeRangeButton = styled.button`
   color: ${({ theme }) => theme.text};
-  background-color: ${({ isActive, theme }) =>
-    isActive ? theme.bg : "transparent"};
+  background-color: ${({ $isActive, theme }) =>
+    $isActive ? theme.bg : "transparent"};
   border: none;
   border-radius: 8px;
   padding: 8px 16px;
   font-size: 14px;
   cursor: pointer;
-  font-weight:${({ isActive, theme }) =>
-    isActive ? "bold" : "none"};
+  font-weight: ${({ $isActive }) => ($isActive ? "bold" : "normal")};
 `;
+
 const StyledRangePicker = styled(RangePicker)`
  background-color: ${({ theme }) => theme.bg};
  border: 2px dashed ${({ theme }) => theme.body};

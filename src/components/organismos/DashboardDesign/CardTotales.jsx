@@ -13,9 +13,18 @@ export const CardTotales = ({ title, icon, value, percentage }) => {
         <Icon width="20" height="20" icon={icon} />
       </Title>
       <SalesValue>{value} </SalesValue>
-      <Percentage isPositive={isPositive} isNeutral={isNeutral}>
-       <Icon icon={isNeutral?"akar-icons:minus":isPositive?"iconamoon:arrow-up-2-fill":"iconamoon:arrow-down-2-fill"}   width="16"
-          height="16"/>
+      <Percentage $isPositive={isPositive} $isNeutral={isNeutral}>
+        <Icon
+          icon={
+            isNeutral
+              ? "akar-icons:minus"
+              : isPositive
+              ? "iconamoon:arrow-up-2-fill"
+              : "iconamoon:arrow-down-2-fill"
+          }
+          width="16"
+          height="16"
+        />
         {percentage}% al periodo anterior
       </Percentage>
     </Container>
@@ -52,10 +61,10 @@ const SalesValue = styled.span`
   }
 `;
 const Percentage = styled.span`
-  color: ${(props) =>
-    props.isNeutral ? "#6b7280" : props.isPositive ? "#616161" : "#d32f5b"};
-   font-weight: 500;
-   display: flex;
-   align-items: start;
-   font-size: 12px;
+  color: ${({ $isNeutral, $isPositive }) =>
+    $isNeutral ? "#6b7280" : $isPositive ? "#616161" : "#d32f5b"};
+  font-weight: 500;
+  display: flex;
+  align-items: start;
+  font-size: 12px;
 `;

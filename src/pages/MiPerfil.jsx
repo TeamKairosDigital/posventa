@@ -77,7 +77,7 @@ export const MiPerfil = () => {
             <Label>Email</Label>
             <InputText2>
               <input
-                disabled="true"
+                disabled={true}
                 step="0.01"
                 defaultValue={datausuarios?.correo}
                 className="form__field"

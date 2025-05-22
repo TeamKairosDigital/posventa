@@ -39,9 +39,9 @@ export function MenuFlotante() {
   return (
     <Container>
       {/* Menú flotante que se expande al hacer clic */}
-      <MenuItems isOpen={isOpen}>
+      <MenuItems $isOpen={isOpen}>
         <MenuItem
-          isOpen={isOpen}
+          $isOpen={isOpen}
           delay="0s"
           onClick={() => {
             toggleMenu();
@@ -53,7 +53,7 @@ export function MenuFlotante() {
           <Text>Ingresar dinero</Text>
         </MenuItem>
         <MenuItem
-          isOpen={isOpen}
+          $isOpen={isOpen}
           delay="0.1s"
           onClick={() => {
             toggleMenu();
@@ -65,7 +65,7 @@ export function MenuFlotante() {
           <Text>Retirar dinero</Text>
         </MenuItem>
         <MenuItem
-          isOpen={isOpen}
+          $isOpen={isOpen}
           delay="0.2s"
           onClick={() => {
             toggleMenu();
@@ -76,11 +76,11 @@ export function MenuFlotante() {
           <Text>Cerrar caja</Text>
         </MenuItem>
 
-        <MenuItem isOpen={isOpen} delay="0.4s">
+        <MenuItem $isOpen={isOpen} delay="0.4s">
           <Icon icon="icon-park:preview-open" />
           <Text>Ver ventas del día</Text>
         </MenuItem>
-        <MenuItem isOpen={isOpen} delay="0.3s" onClick={mutateEliminarVenta}>
+        <MenuItem $isOpen={isOpen} delay="0.3s" onClick={mutateEliminarVenta}>
           <Icon icon="flat-color-icons:delete-row" />
           <Text>Eliminar venta</Text>
         </MenuItem>
@@ -143,7 +143,7 @@ const MenuItems = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  ${({ isOpen }) => !isOpen && "display: none;"}
+  ${({ $isOpen }) => !$isOpen && "display: none;"}
 `;
 
 const MenuItem = styled.div`
@@ -158,7 +158,7 @@ const MenuItem = styled.div`
   cursor: pointer;
   transition: background-color 0.3s ease;
   opacity: 0;
-  animation: ${({ isOpen }) => (isOpen ? slideUp : "none")} 0.4s ease forwards;
+  animation: ${({ $isOpen }) => ($isOpen ? slideUp : "none")} 0.4s ease forwards;
   animation-delay: ${({ delay }) => delay};
 
   &:hover {

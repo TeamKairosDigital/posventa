@@ -35,30 +35,8 @@ export const LandingPagesWelcome = () => {
       <ContentSection>
         <SubContentSection>
           <LeftSection className="left-section">
-            <h1>POS VENTAS CON REACT.JS {datausuarios?.id} </h1>
-            <Step>
-              <IconPlaceholder>
-                <img src="https://i.ibb.co/h19LCXP/aprendiendo.png" />
-              </IconPlaceholder>
-              <Text>
-                <Title>Aprende desde cero</Title>
-                <Description>
-                  Descubre cómo crear tu sistema de postventa profesional paso a
-                  paso.
-                </Description>
-              </Text>
-            </Step>
-            <Step>
-              <IconPlaceholder>
-                <img src="https://i.ibb.co/RBXt8Fs/taladro-de-mano.png" />
-              </IconPlaceholder>
-              <Text>
-                <Title>Domina herramientas esenciales</Title>
-                <Description>
-                  Desarrolla habilidades clave en programación.
-                </Description>
-              </Text>
-            </Step>
+            <h1>Bienvenido POS VENTA </h1>
+
             <Step>
               <IconPlaceholder>
                 <img src="https://i.ibb.co/QPFxqC3/ejecutante.png" />
@@ -72,8 +50,8 @@ export const LandingPagesWelcome = () => {
             </Step>
             
             <div style={{ display: "flex", gap: "10px" }}>
-            <BtnLink url={"https://codigo369.com/detallecurso/24"} color={"#fff"} bgcolor={"#ff6a00"} titulo={"inscribete aquí"} />
-              <BtnLink url={"https://t.me/ada369react"} color={"#2f2f2f"} bgcolor={"#ffffff"} titulo={"+ grupo telegram"} />
+              {/* <BtnLink url={"https://codigo369.com/detallecurso/24"} color={"#fff"} bgcolor={"#ff6a00"} titulo={"inscribete aquí"} />
+              <BtnLink url={"https://t.me/ada369react"} color={"#2f2f2f"} bgcolor={"#ffffff"} titulo={"+ grupo telegram"} /> */}
             </div>
           </LeftSection>
           <RightSection className="right-section">
@@ -125,7 +103,7 @@ export const LandingPagesWelcome = () => {
         </SubContentSection>
       </ContentSection>
 
-      <Footer className="footer-section">
+      {/* <Footer className="footer-section">
         <FooterTitle>Tecnologias utilizadas:</FooterTitle>
         <FooterContent>
           <FooterItem>
@@ -149,7 +127,7 @@ export const LandingPagesWelcome = () => {
             </FooterText>
           </FooterItem>
         </FooterContent>
-      </Footer>
+      </Footer> */}
     </Container>
   );
 };
